@@ -139,6 +139,8 @@ pipelines:
               - SECURE_ENV2: test_value1
           runtime: onHost
         requires:
+          resources:
+            - sample_java_file_test
           integrations:
             - github-subint
         triggeredBy:
