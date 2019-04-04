@@ -10,12 +10,13 @@ resources:
         tags:
            except: none
            only: none   
-        buildOnCommit: true
-        buildOnPullRequest: false
-        buildOnPullRequestClose: false
-        buildOnRelease: true
-        buildOnTagPush: false
-        buildOnFileCommit: "*test"
+        buildOn:
+           commit: true
+           pullRequest: true
+           pullRequestClose: true
+           release: true
+           tagPush: true
+           fileCommit: "*test"
         shallowDepth: 2
         gitConfig: 
           - dont_know
