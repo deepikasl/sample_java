@@ -198,3 +198,4 @@ pipelines:
             - echo "Someone cancelled the job"
         outputResources:
           - sample_java_webhook_test
+
