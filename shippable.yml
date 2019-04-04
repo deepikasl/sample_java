@@ -22,7 +22,7 @@ resources:
     type: image
     imageName: "library/nginx"
     configuration:
-      integrationName: docker-subint
+      integrationName: docker-int
     initialVersion:
       imageTag: latest
 
