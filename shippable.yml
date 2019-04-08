@@ -8,15 +8,6 @@ resources:
         except: random
     initialVersion:
       sha: master
-
-  - name: file_res
-    type: file
-    fileUrl: https://github.com/deepikasl/sample_java/blob/master/shippable.yml
-    configuration:
-      integrationName: github-subint
-    initialVersion:
-      fileName: shippable.yml
-      fileDtTm: random_value
  
   - name: image_res
     type: image
