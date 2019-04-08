@@ -64,8 +64,6 @@ pipelines:
         execution:
           onExecute:
             - echo "executing..."
-        outputResources:
-          - file_res
 
       - name: step1_B
         type: bash
@@ -74,8 +72,8 @@ pipelines:
         setup:
           runtime: onHost
         triggeredBy:
-          resources:
-            - file_res 
+          steps:
+            - step1_A 
         execution:
           onExecute:
             - echo "executing..."
