@@ -42,6 +42,7 @@ pipelines:
             - image_res-deepika
         execution:
           onExecute:
+            - sleep 1m
             - echo "executing..."
 
       - name: step1_B-deepika
