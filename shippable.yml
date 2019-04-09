@@ -1,15 +1,5 @@
 resources:
-  - name: gitrepo_res
-    type: gitRepo
-    repoPath: deepikasl/vt1
-    configuration:
-      integrationName: github-subint
-      branches:
-        except: random
-    initialVersion:
-      sha: master
- 
-  - name: image_res
+  - name: image_res-deepika
     type: image
     imageName: "library/nginx"
     configuration:
@@ -18,11 +8,11 @@ resources:
       imageTag: latest
 
 pipelines:
-  - name: pipe_1
+  - name: pipe_1-deepika
     setup:
       runtime: onHost
     steps:
-      - name: step1_A
+      - name: step1_A-deepika
         type: bash
         configuration:
           affinityGroup: test_group 
@@ -48,18 +38,13 @@ pipelines:
               tag:  test
               options: test
         requires:
-          integrations:
-            - docker-int
           resources:
-            - image_res
-        triggeredBy:
-          resources:
-            - gitrepo_res 
+            - image_res-deepika
         execution:
           onExecute:
             - echo "executing..."
 
-      - name: step1_B
+      - name: step1_B-deepika
         type: bash
         configuration:
           affinityGroup: test_group      
@@ -67,12 +52,12 @@ pipelines:
           runtime: onHost
         triggeredBy:
           steps:
-            - step1_A 
+            - step1_A-deepika
         execution:
           onExecute:
             - echo "executing..."
 
-      - name: step1_C
+      - name: step1_C-deepika
         type: bash
         configuration:
           affinityGroup: test_group      
@@ -80,7 +65,7 @@ pipelines:
           runtime: onHost
         triggeredBy:
           steps:
-            - step1_A 
+            - step1_A-deepika
         execution:
           onExecute:
             - echo "executing..."
