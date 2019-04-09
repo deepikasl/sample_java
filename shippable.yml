@@ -3,7 +3,7 @@ resources:
     type: image
     imageName: "library/nginx"
     configuration:
-      integrationName: docker-int
+      integrationName: docker-deepika
     initialVersion:
       imageTag: latest
 
