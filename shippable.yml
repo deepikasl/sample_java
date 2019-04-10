@@ -10,7 +10,10 @@ resources:
 pipelines:
   - name: pipe_1-deepika
     setup:
-      runtime: onHost
+      environmentVariables:
+        readOnly:
+          - ENV1: value1
+          - ENV2: value2 
     steps:
       - name: step1_A-deepika
         type: bash
